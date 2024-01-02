@@ -8,9 +8,12 @@ function App(){
   const dec = ()=>{
     setcounter(counter-1)
   }
-  return <><h1>{counter}</h1> 
-  <button onClick={increase}>Increase</button>
-  <button onClick={dec}>Decrement</button>
+  return <>
+  <h1 className="fs-3 text-center">{counter}</h1> 
+  <div class="col-2 mx-auto">
+  <button className="btn btn-outline-success" onClick={increase}>Increase</button>
+  <button className="btn btn-outline-secondary" onClick={dec}>Decrement</button>
+  </div>
   </>
 }
 
