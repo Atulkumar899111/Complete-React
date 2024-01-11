@@ -1,47 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  let [count,setCount] = useState(4);
-  const addValue = ()=>{
-    setCount(count+1)
+function App(){
+  let [counter,setcounter] = useState(4);
+  const increase = ()=>{
+    setcounter(counter+1)
   }
-  
-  const decreasevalue = ()=>{
-      setCount(count-1)
+  const dec = ()=>{
+    setcounter(counter-1)
   }
-  return (
-    <>
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-      <button 
-      onClick={addValue}>Count</button>
-      <button onClick={decreasevalue}
-      >Decrease</button>
-      <h1>{count}</h1>
-      
-    </>
-  )
+  return <>
+  <h1 className="fs-3 text-center">{counter}</h1> 
+  <div class="col-2 mx-auto">
+  <button className="btn btn-outline-success" onClick={increase}>Increase</button>
+  <button className="btn btn-outline-secondary" onClick={dec}>Decrement</button>
+  </div>
+  </>
 }
 
-export default App
+export default App;
