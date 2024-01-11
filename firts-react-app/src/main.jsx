@@ -1,16 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import Heding from './Heding.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
-import List from './List.jsx';
-import Form from './Form.jsx';
+import CompletedList from './CompleteList'
+import Data from './Components/Data'
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Heding/>
+    {/* <Heding/>
     <Form/>
-    <List/>
-  </React.StrictMode>,
+    <List/> */}
+    <CompletedList/>
+    {/* <Data/> */}
+  </React.StrictMode>
 )
