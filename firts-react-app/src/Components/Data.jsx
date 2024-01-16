@@ -1,15 +1,34 @@
-// import Card from "./Card";
-
+import Card from "./Card";
+import ErrorMessage from "./ErrorMessage"
 function Data(){
-    let arr = ["An item","second item","third item","fourth item","fifth one","sixth item"]
+    // let arr = []
+    // let arr = ["An item","second item","third item","fourth item","fifth one","sixth item"]
+    let arr = [
+    {
+        name:"Atul",
+        job:"QA Engineer"
+    },
+    {
+        name:"Shruti",
+        job:"Software developer"
+    },
+    {
+        name:"Coco",
+        job:"Family boy"
+    }
+]
     return<>
-        {arr.map((item)=>{
-            console.log(item);
+    <div className="row row-cols-1 row-cols-md-4 g-4">
+    <ErrorMessage arrName={arr}></ErrorMessage>
+        {arr.map((item,index)=>(
             // <h1 color="black">{item}</h1>
-            <ul>
-            <li className="list-group-item">{item}</li>
-            </ul>
-        })}
+            // <ul>
+            // <li className="list-group-item">{item}</li>
+            // </ul>
+            
+            <Card key={index} customerName={item}/>
+            ))}
+        </div>
         {/* <div className="row row-cols-1 row-cols-md-3 g-4"> */}
             {/* {arr.map((item)=>{
 

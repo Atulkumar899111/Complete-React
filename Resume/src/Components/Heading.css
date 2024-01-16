@@ -1,0 +1,19 @@
+.title{
+    text-align: left;
+    margin-top: 200px;
+    padding-left: 70px;
+    
+}
+.stoke_text{
+    color: white;   
+    font-size: 50px;   
+    -webkit-text-stroke-width: 2px;   
+    -webkit-text-stroke-color: black; 
+}
+h1{
+    text-shadow: black 1px 0 0.1px;
+}
+.bold_long_text{
+    font-size: 40px;  
+    font-weight: bold;
+}

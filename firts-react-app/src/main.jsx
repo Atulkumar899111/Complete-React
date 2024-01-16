@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Heding/>
     <Form/>
     <List/> */}
-    <CompletedList/>
-    {/* <Data/> */}
+    {/* <CompletedList/> */}
+    <Data/>
   </React.StrictMode>
 )
