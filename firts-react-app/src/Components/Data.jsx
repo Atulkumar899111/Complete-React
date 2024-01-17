@@ -1,36 +1,51 @@
+import { useState } from "react";
 import Card from "./Card";
-import ErrorMessage from "./ErrorMessage"
-function Data(){
-    // let arr = []
-    // let arr = ["An item","second item","third item","fourth item","fifth one","sixth item"]
-    let arr = [
+import ErrorMessage from "./ErrorMessage";
+import Input from "./Input";
+function Data() {
+  // let arr = []
+  // let arr = ["An item","second item","third item","fourth item","fifth one","sixth item"]
+  let [arr1, setArr1] = useState([
     {
-        name:"Atul",
-        job:"QA Engineer"
+      name: "Atul",
+      job: "QA Engineer",
     },
     {
-        name:"Shruti",
-        job:"Software developer"
+      name: "Shruti",
+      job: "Software developer",
     },
     {
-        name:"Coco",
-        job:"Family boy"
+      name: "Coco",
+      job: "Family boy",
+    },
+  ]);
+  //   let arr = ;
+
+  const handelOnChange = (e) => {
+    if (e.key === "Enter") {
+      let arr3 = {
+        name: e.target.value,
+        job: "new post",
+      };
+      setArr1([...arr1, arr3]);
     }
-]
-    return<>
-    <div className="row row-cols-1 row-cols-md-4 g-4">
-    <ErrorMessage arrName={arr}></ErrorMessage>
-        {arr.map((item,index)=>(
-            // <h1 color="black">{item}</h1>
-            // <ul>
-            // <li className="list-group-item">{item}</li>
-            // </ul>
-            
-            <Card key={index} customerName={item}/>
-            ))}
-        </div>
-        {/* <div className="row row-cols-1 row-cols-md-3 g-4"> */}
-            {/* {arr.map((item)=>{
+  };
+  return (
+    <>
+      <div className="row row-cols-1 row-cols-md-4 g-4">
+        <Input handelOnChange={handelOnChange}></Input>
+        <ErrorMessage arrName={arr1}></ErrorMessage>
+        {arr1.map((item, index) => (
+          // <h1 color="black">{item}</h1>
+          // <ul>
+          // <li className="list-group-item">{item}</li>
+          // </ul>
+
+          <Card key={index} customerName={item} />
+        ))}
+      </div>
+      {/* <div className="row row-cols-1 row-cols-md-3 g-4"> */}
+      {/* {arr.map((item)=>{
 
                 
                  <div className="col">
@@ -48,14 +63,9 @@ function Data(){
             <h1>{item}</h1>
             })} */}
 
-            
-        
-        {/* </div> */}
-
-            
-            
-            
+      {/* </div> */}
     </>
+  );
 }
 
 export default Data;
