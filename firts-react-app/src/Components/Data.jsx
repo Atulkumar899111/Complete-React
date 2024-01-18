@@ -3,22 +3,22 @@ import Card from "./Card";
 import ErrorMessage from "./ErrorMessage";
 import Input from "./Input";
 function Data() {
-  // let arr = []
+  let [arr1, setArr1] = useState([]);
   // let arr = ["An item","second item","third item","fourth item","fifth one","sixth item"]
-  let [arr1, setArr1] = useState([
-    {
-      name: "Atul",
-      job: "QA Engineer",
-    },
-    {
-      name: "Shruti",
-      job: "Software developer",
-    },
-    {
-      name: "Coco",
-      job: "Family boy",
-    },
-  ]);
+  //   let [arr1, setArr1] = useState([
+  //     {
+  //       name: "Atul",
+  //       job: "QA Engineer",
+  //     },
+  //     {
+  //       name: "Shruti",
+  //       job: "Software developer",
+  //     },
+  //     {
+  //       name: "Coco",
+  //       job: "Family boy",
+  //     },
+  //   ]);
   //   let arr = ;
 
   const handelOnChange = (e) => {
