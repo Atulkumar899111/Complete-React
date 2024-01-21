@@ -17,6 +17,8 @@ function Calculator() {
     "+",
     "-",
     "=",
+    "/",
+    "*",
   ];
   const [display, setDisplay] = useState("");
   const getButtonValue = (ButtonText) => {

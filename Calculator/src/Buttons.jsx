@@ -4,7 +4,6 @@ const Button = ({ buttonName, getButtonValue }) => {
     <>
       <button>
         <span className="button_top" onClick={() => getButtonValue(buttonName)}>
-          {" "}
           {buttonName}
         </span>
       </button>
