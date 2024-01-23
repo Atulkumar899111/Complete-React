@@ -1,34 +1,42 @@
+import { useRef } from "react";
 import { useState } from "react";
 
 function Form({ addList }) {
-  const [inputValue, setInputValue] = useState("");
-  const [inputDateValue, setDateValue] = useState(null);
-  let handleChange = (e) => {
-    console.log(e.target.value);
-    setInputValue(e.target.value);
-  };
-  const handleDateChange = (e) => {
-    const dateValue = e.target.value;
-    console.log(e.target.value);
-    setDateValue(dateValue);
-  };
+  //   const [inputValue, setInputValue] = useState("");
+  //   const [inputDateValue, setDateValue] = useState(null);
+  //   let handleChange = (e) => {
+  //     console.log(e.target.value);
+  //     setInputValue(e.target.value);
+  //   };
+  //   const handleDateChange = (e) => {
+  //     const dateValue = e.target.value;
+  //     console.log(e.target.value);
+  //     setDateValue(dateValue);
+  //   };
+
+  const todoElement = useRef();
+  const dateElement = useRef();
   function addClickButton(e) {
     e.preventDefault();
-    addList(inputValue, inputDateValue);
-    setInputValue("");
-    setDateValue("");
+    addList(todoElement.current.value, dateElement.current.value);
+    todoElement.current.value = "";
+    dateElement.current.value = "";
+    // setInputValue("");
+    // setDateValue("");
   }
 
   return (
     <>
-      <form className="row g-3">
+      <form className="row g-3" onSubmit={addClickButton}>
         <div className="col-auto mx-auto">
           <input
             type="Text"
             className="form-control"
             id="name"
             placeholder="Text"
-            onChange={handleChange}
+            ref={todoElement}
+            // value={todoElement.current.value}
+            // onChange={handleChange}
           />
         </div>
         <div className="col-auto mx-auto">
@@ -37,13 +45,13 @@ function Form({ addList }) {
             className="form-control"
             id="name"
             placeholder="Text"
-            onChange={handleDateChange}
+            ref={dateElement}
+            // value={todoElement.current.value}
+            // onChange={handleDateChange}
           />
         </div>
         <div className="col-auto mx-auto">
-          <button className="btn btn-primary mb-3" onClick={addClickButton}>
-            Add
-          </button>
+          <button className="btn btn-primary mb-3">Add</button>
         </div>
       </form>
     </>

@@ -20,7 +20,7 @@ function ToList() {
     } else {
       console.log(input, date);
       let add = { todo: input, Date: date };
-      setList([...list, add]);
+      setList((currentValue) => [...currentValue, add]);
     }
   };
 
