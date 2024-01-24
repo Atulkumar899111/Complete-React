@@ -1,4 +1,9 @@
-let List = ({ allList, handleDeleteButton }) => {
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
+
+let List = ({ allList }) => {
+  const { deleteItem } = useContext(TodoItemsContext);
+  TodoItemsContext;
   return (
     <>
       <div className="row g-3">
@@ -12,7 +17,7 @@ let List = ({ allList, handleDeleteButton }) => {
           <button
             type="submit"
             className="btn btn-danger mb-3"
-            onClick={() => handleDeleteButton(allList.todo)}
+            onClick={() => deleteItem(allList.todo)}
           >
             Delete
           </button>
