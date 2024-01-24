@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { useRef } from "react";
-import { useState } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
+// import { useState } from "react";
 
-function Form({ addList }) {
+function Form() {
   //   const [inputValue, setInputValue] = useState("");
   //   const [inputDateValue, setDateValue] = useState(null);
   //   let handleChange = (e) => {
@@ -13,12 +15,12 @@ function Form({ addList }) {
   //     console.log(e.target.value);
   //     setDateValue(dateValue);
   //   };
-
+  const { addNewItem } = useContext(TodoItemsContext);
   const todoElement = useRef();
   const dateElement = useRef();
   function addClickButton(e) {
     e.preventDefault();
-    addList(todoElement.current.value, dateElement.current.value);
+    addNewItem(todoElement.current.value, dateElement.current.value);
     todoElement.current.value = "";
     dateElement.current.value = "";
     // setInputValue("");
