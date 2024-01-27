@@ -20,7 +20,6 @@ const Dropdown = () => {
   };
   let [countryValue, setCountryValue] = useState("India");
   const getValue = (e) => {
-    // setCountryValue(() => e.target.value);
     setCountryValue(e.target.value);
     console.log(countryValue);
   };
